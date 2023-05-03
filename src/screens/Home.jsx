@@ -1,24 +1,23 @@
 import React, { useState } from 'react';
-import { AppstoreOutlined, MailOutlined, SettingOutlined } from '@ant-design/icons';
+import { AppstoreOutlined, HomeOutlined, BookOutlined } from '@ant-design/icons';
 import { MenuProps } from 'antd';
 import { Menu } from 'antd';
 
 const items: MenuProps['items'] = [
   {
-    label: 'Navigation One',
-    key: 'mail',
-    icon: <MailOutlined />,
+    label: 'Party of Two',
+    key: 'home',
+    icon: <HomeOutlined />,
   },
   {
-    label: 'Navigation Two',
+    label: 'Guides',
+    key: 'book',
+    icon: <BookOutlined />,
+  },
+  {
+    label: 'Restaurants',
     key: 'app',
     icon: <AppstoreOutlined />,
-    disabled: true,
-  },
-  {
-    label: 'Navigation Three - Submenu',
-    key: 'SubMenu',
-    icon: <SettingOutlined />,
     children: [
       {
         type: 'group',
@@ -52,16 +51,16 @@ const items: MenuProps['items'] = [
   },
   {
     label: (
-      <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
-        Navigation Four - Link
+      <a href="https://www.instagram.com/partyxtwo/" target="_blank" rel="noopener noreferrer">
+        Instagram
       </a>
     ),
-    key: 'alipay',
+    key: 'instagram',
   },
 ];
 
 const App: React.FC = () => {
-  const [current, setCurrent] = useState('mail');
+  const [current, setCurrent] = useState('home');
 
   const onClick: MenuProps['onClick'] = (e) => {
     console.log('click ', e);
